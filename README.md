@@ -54,27 +54,46 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 
 
-Developed by:CHITTOOR SARAVANA MRUDHULA                                   RegisterNumber:24003790
+Developed by:CHITTOOR SARAVANA MRUDHULA                        
+RegisterNumber:24003790
+
+
+```
+module sr_ff(s,r,clk,q,qbar);
+input s,r,clk;
+output reg q;
+output reg qbar;
+initial
+begin
+q=0;
+qbar=1;
+end
+always @(posedge clk)
+begin
+q=(s|(~r&q));
+qbar=r|(~s&~q);
+end
+endmodule
+
+```
 
 
 
-
-
-**RTL LOGIC FOR FLIPFLOPS**
+**RTL LOGIC FOR FLIPFLOP**
 
 
 ![Experiment 6   DE](https://github.com/user-attachments/assets/2e77c4ae-81bd-4f76-b821-e023dc5d7b31)
 
 
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+**TIMING DIAGRAM FOR FLIP FLOP**
 
 ![Experiment 6     DE](https://github.com/user-attachments/assets/1f5069ff-e88c-4fec-8d33-e1c507d90e43)
 
 
 
 
-**RESULTS**
+**RESULT**
 
 SR flipflop using verilog and validating their functionality using their functional tables is verified.
 
